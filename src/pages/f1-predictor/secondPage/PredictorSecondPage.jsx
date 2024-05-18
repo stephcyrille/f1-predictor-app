@@ -41,7 +41,7 @@ export const PredictorSecondPage = () => {
       setDriverId(searchParams.get('driverId'));
       setConstructorId(searchParams.get('constructorId'));
     } else {
-      navigate("/projects/f1-predictor/select-driver");
+      navigate("/");
     }
     setReady(true)
   }, [ready, searchParams, navigate])
@@ -69,7 +69,7 @@ export const PredictorSecondPage = () => {
   }, []);
 
   const handleBackClick = () => {
-    navigate("/projects/f1-predictor/select-driver");
+    navigate("/");
   };
 
   const [selectedCircuitIndex, setSelectedCircuitIndex] = useState(0);
@@ -80,7 +80,7 @@ export const PredictorSecondPage = () => {
   
   const handleImageClick = () => {
     navigate({
-      pathname: "/projects/f1-predictor/prediction",
+      pathname: "/prediction",
       search: createSearchParams({
         driverId: driverId,
         constructorId: constructorId,

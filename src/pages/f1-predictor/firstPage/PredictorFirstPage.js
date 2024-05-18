@@ -49,7 +49,7 @@ export const PredictorFirstPage = () => {
   const handleImageClick = useCallback(() => {
     if (driversList.length > 0) {
       navigate({
-        pathname: "/projects/f1-predictor/select-circuit",
+        pathname: "/select-circuit",
         search: createSearchParams({
           driverId: driversList[selectedDriverIndex]?.driverId,
           constructorId: driversList[selectedDriverIndex]?.cid,

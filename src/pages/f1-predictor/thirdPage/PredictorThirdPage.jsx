@@ -57,14 +57,14 @@ export const PredictorThirdPage = () => {
 
       PostPrediction(postData);
     } else {
-      navigate("/projects/f1-predictor/select-circuit");
+      navigate("/select-circuit");
     }
     setReady(true)
   }, [ready, searchParams, navigate])
 
 
   const handleBackClick = () => {
-    navigate("/projects/f1-predictor/select-driver");
+    navigate("/");
   };
 
   return (
