@@ -31,6 +31,7 @@ export const PredictorThirdPage = () => {
 
   useEffect(() => {
     if(ready) return;
+    if (hasFetched.current) return;
     hasFetched.current = true;
 
     const PostPrediction = async (data) => {  
