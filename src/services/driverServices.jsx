@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:8000';
-const PATH = '/apis/v1/drivers/all/'
+const API_URL = process.env.REACT_APP_API_URL;
+const PATH = process.env.REACT_APP_API_DRIVERS_PATH;
 
 export default async function getAllDriversList() {
   try {

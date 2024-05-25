@@ -36,12 +36,19 @@ export const PredictorSecondPage = () => {
   useEffect(() => {
     if(ready) return;
     
-    if(searchParams.get('driverId') != null 
-        && searchParams.get('constructorId') != null) {
-      setDriverId(searchParams.get('driverId'));
-      setConstructorId(searchParams.get('constructorId'));
+    if ((searchParams.get('driverId') && searchParams.get('constructorId'))) {
+      if(searchParams.get('driverId') !== "" 
+          && searchParams.get('constructorId') !== "") {
+        setDriverId(searchParams.get('driverId'));
+        setConstructorId(searchParams.get('constructorId'));
+      }
     } else {
-      navigate("/");
+      navigate({
+        pathname: "/",
+        search: createSearchParams({
+          missing: "all",
+        }).toString()
+      });
     }
     setReady(true)
   }, [ready, searchParams, navigate])

@@ -45,18 +45,21 @@ export const PredictorThirdPage = () => {
       }
     }
     
-    if(searchParams.get('driverId') != null && searchParams.get('constructorId') != null
-        && searchParams.get('circuitId') != null && searchParams.get('raceRound') != null) {
+    if(searchParams.get('driverId') && searchParams.get('constructorId') 
+        && searchParams.get('circuitId') && searchParams.get('raceRound')) {
+      if(searchParams.get('driverId') !== "" && searchParams.get('constructorId') !== ""
+          && searchParams.get('circuitId') !== "" && searchParams.get('raceRound') !== "") {
 
-      let postData = {
-        driverId: searchParams.get('driverId'),
-        constructorId: searchParams.get('constructorId'),
-        circuitId: searchParams.get('circuitId'),
-        raceRound: searchParams.get('raceRound'),
-        year: 2023
-      }
+        let postData = {
+          driverId: searchParams.get('driverId'),
+          constructorId: searchParams.get('constructorId'),
+          circuitId: searchParams.get('circuitId'),
+          raceRound: searchParams.get('raceRound'),
+          year: 2023
+        }
 
-      PostPrediction(postData);
+        PostPrediction(postData);
+      } 
     } else {
       navigate("/select-circuit");
     }

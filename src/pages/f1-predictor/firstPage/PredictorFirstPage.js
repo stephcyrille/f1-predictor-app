@@ -1,11 +1,14 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { motion } from "framer-motion";
-import { createSearchParams, useNavigate } from 'react-router-dom';
+import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 import { DriverBigCard } from '../components/DriverBigCard';
 import { ItemNameDisplay } from '../components/ItemNameDisplay';
 import { DriverCharactersList } from '../components/DriverCharactersList';
 import { getAllDriversList } from '../../../services';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 const routeVariants = {
   initial: { x: '-100%' },
@@ -21,6 +24,18 @@ export const PredictorFirstPage = () => {
   const [selectedDriverIndex, setSelectedDriverIndex] = useState(0);
   const [driversList, setDriversList] = useState([]);
   const hasFetched = useRef(false);
+  const [searchParams,] = useSearchParams();
+  const [ready, setReady] = useState(false);
+  const [errorMissingVal, setErrorMissingVal] = useState(false);
+
+  useEffect(() => {
+    if(ready) return;
+    
+    if(searchParams.get('missing')) {
+      setErrorMissingVal(true);
+    } 
+    setReady(true)
+  }, [ready, searchParams, navigate])
 
   useEffect(() => {
     if (hasFetched.current) return;
@@ -68,6 +83,12 @@ export const PredictorFirstPage = () => {
         />
         <div className="absolute z-20 bg-gradient-to-r from-gray-900 via-gray-600 to-red-300 dark:from-gray-900 dark:via-lime-800 dark:to-gray-900 h-screen lg:h-screen w-full opacity-60" />
         <div className="absolute z-20 h-screen lg:h-screen w-full pt-32">
+          { errorMissingVal && (
+            <p className='bg-red-700 text-center -mt-10 mb-10 p-2 text-white'>
+              <FontAwesomeIcon className='mr-2' icon={faExclamationTriangle} style={{ color: 'white', fontSize: '1em' }} />
+              Error: Missings values ! <br/> 
+              If the problem persist <a title='Send an email' className='pointer w-4 text-gray-900 italic ml-2 bg-white p-1' href='mailto:contact@stephanemebenga.site'>contact the administrator</a></p>
+          )}
           <div className='text-amber-400 dark:text-lime-400 pb-0'>
             <h1 className='text-center lg:text-xl md:text-xl text-white'>
               Select the driver

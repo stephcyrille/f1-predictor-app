@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:8000';
-const PATH = '/apis/v1/predictor/post/'
+const API_URL = process.env.REACT_APP_API_URL;
+const PATH = process.env.REACT_APP_API_PREDICTOR_PATH;
 
 export default async function MakePrediction(data) {
   try {
