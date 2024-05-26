@@ -55,13 +55,20 @@ export const Header = () => {
             <img className="h-8 w-auto dark:bg-white dark:p-1 dark:w-12 dark:rounded-full dark:h-8" src={logo} alt="Logo SCMA" />
           </a>
         </div>
+        <a href="https://stephanemebenga.site/" 
+          className="dark:text-lime-100 dark:active:text-gray-700 dark:bg-black dark:hover:text-white -mx-3 
+                      rounded-lg px-2 py-2 lg:px-4 lg:py-2 text-xs lg:text-base font-semibold leading-7 text-gray-800 
+                      hover:bg-gray-50 hover:text-lime-600 bg-lime-100"
+        >
+          <span className='hidden lg:inline-block mr-1'>{t('Check')}</span>{t('My Portfolio')}
+        </a>
         <div className="flex lg:hidden">
           <Popover className="relative">
             <Popover.Button 
               className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus-visible:outline-none 
                         hover:bg-lime-100 py-2 px-3 rounded-lg ease-in-out delay-80 duration-200 dark:text-gray-100 dark:hover:text-gray-600">
               
-                <LanguageIcon className='mr-2 h-6 w-6' style={{fontSize: 26}} /> {curr_lng === 'en' ? t('english') : t('french')}
+                <LanguageIcon className='mr-2 h-4 w-4' style={{fontSize: 26}} /> {curr_lng === 'en' ? t('english') : t('french')}
                 <img src={curr_lng === 'en' ? english : french} alt={`${curr_lng} flag`} className='ml-2 w-4 h-4' />
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
