@@ -32,6 +32,7 @@ export const PredictorSecondPage = () => {
   const [driverId, setDriverId] = useState(null);
   const [constructorId, setConstructorId] = useState(null);
   const hasFetched = useRef(false);
+  const [selectedCircuitIndex, setSelectedCircuitIndex] = useState(0);
 
   useEffect(() => {
     if(ready) return;
@@ -78,8 +79,6 @@ export const PredictorSecondPage = () => {
   const handleBackClick = () => {
     navigate("/");
   };
-
-  const [selectedCircuitIndex, setSelectedCircuitIndex] = useState(0);
 
   const handleImageHover = (index) => {
     setSelectedCircuitIndex(index);

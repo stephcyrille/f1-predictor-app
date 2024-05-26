@@ -43,7 +43,9 @@ export const ItemSelectorHScroll = forwardRef(({ dataList, idx, handleImageClick
         className='flex items-center text-slate-400 dark:text-slate-50 overflow-x-auto bg-gray-300 dark:bg-gray-800 py-8 my-4 lg:my-16 bg-opacity-60 dark:bg-opacity-60'
         onMouseMove={handleMouseMove}
       >
-        {dataList.map((data, key) => (
+        {dataList
+          .sort((a, b) => a.round - b.round)
+          .map((data, key) => (
             <img
               key={key}
               src={data.circuit_img}
