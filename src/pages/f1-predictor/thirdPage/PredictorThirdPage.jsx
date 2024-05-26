@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, createSearchParams } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { Loader } from '../../../component/loader/Loader';
 import { MakePrediction } from '../../../services'
@@ -41,6 +41,14 @@ export const PredictorThirdPage = () => {
         setLoading(false);
       } catch (err) {
         console.log('EEEEEEEEE', err.message);
+        
+        // Back to the first page if there is an error
+        navigate({
+          pathname: "/",
+          search: createSearchParams({
+            missing: "all",
+          }).toString()
+        });
         setLoading(false);
       }
     }
@@ -57,7 +65,6 @@ export const PredictorThirdPage = () => {
           raceRound: searchParams.get('raceRound'),
           year: 2023
         }
-
         PostPrediction(postData);
       } 
     } else {
