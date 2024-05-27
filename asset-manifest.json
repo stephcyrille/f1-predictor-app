@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.77899420.css",
-    "main.js": "/static/js/main.2633f05e.js",
+    "main.js": "/static/js/main.0b6ee391.js",
     "static/js/592.2bbff27c.chunk.js": "/static/js/592.2bbff27c.chunk.js",
     "static/media/Formula1-Regular-1.ttf": "/static/media/Formula1-Regular-1.0f4e3d54644717199c6f.ttf",
     "static/media/logo_scma_light.png": "/static/media/logo_scma_light.f09040c278e3de3d1717.png",
@@ -9,11 +9,11 @@
     "static/media/french.svg": "/static/media/french.dea7e3359c1cad34b1eab2011f8b6693.svg",
     "index.html": "/index.html",
     "main.77899420.css.map": "/static/css/main.77899420.css.map",
-    "main.2633f05e.js.map": "/static/js/main.2633f05e.js.map",
+    "main.0b6ee391.js.map": "/static/js/main.0b6ee391.js.map",
     "592.2bbff27c.chunk.js.map": "/static/js/592.2bbff27c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.77899420.css",
-    "static/js/main.2633f05e.js"
+    "static/js/main.0b6ee391.js"
   ]
 }
