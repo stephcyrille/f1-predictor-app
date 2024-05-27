@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.d3c26fe0.css",
-    "main.js": "/static/js/main.9d4442be.js",
+    "main.css": "/static/css/main.c3e27980.css",
+    "main.js": "/static/js/main.c7ac3f0f.js",
     "static/js/592.2bbff27c.chunk.js": "/static/js/592.2bbff27c.chunk.js",
     "static/media/Formula1-Regular-1.ttf": "/static/media/Formula1-Regular-1.0f4e3d54644717199c6f.ttf",
     "static/media/logo_scma_light.png": "/static/media/logo_scma_light.f09040c278e3de3d1717.png",
     "static/media/english.svg": "/static/media/english.03cb69cc82739315b94ae8b32c44a797.svg",
     "static/media/french.svg": "/static/media/french.dea7e3359c1cad34b1eab2011f8b6693.svg",
     "index.html": "/index.html",
-    "main.d3c26fe0.css.map": "/static/css/main.d3c26fe0.css.map",
-    "main.9d4442be.js.map": "/static/js/main.9d4442be.js.map",
+    "main.c3e27980.css.map": "/static/css/main.c3e27980.css.map",
+    "main.c7ac3f0f.js.map": "/static/js/main.c7ac3f0f.js.map",
     "592.2bbff27c.chunk.js.map": "/static/js/592.2bbff27c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3c26fe0.css",
-    "static/js/main.9d4442be.js"
+    "static/css/main.c3e27980.css",
+    "static/js/main.c7ac3f0f.js"
   ]
 }
