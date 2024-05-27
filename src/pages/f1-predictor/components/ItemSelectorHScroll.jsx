@@ -57,6 +57,7 @@ export const ItemSelectorHScroll = forwardRef(({ dataList, idx, handleImageClick
             />
         ))}
       </div>
+      
     </>
   );
 });
