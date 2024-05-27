@@ -34,7 +34,7 @@ i18n.use(initReactI18next).init({
       translation: {
         'look': 'Visiter',
         'my.portfolio': 'Mon Portfolio',
-        "driver.selection": "Sélectionnez le pilote",
+        "driver.selection": "Sélectionner le pilote",
         'select.driver': 'Sélectionner ce pilote',
         'prediction.error.line.1': "Erreur: Valeurs manquantes !",
         'prediction.error.line.2': "Si le problème persiste",

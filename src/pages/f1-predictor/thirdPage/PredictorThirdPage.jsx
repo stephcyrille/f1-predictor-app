@@ -91,7 +91,7 @@ export const PredictorThirdPage = () => {
           <div className="relative mix-blend-overlay">
             <img src={result.constructor_img} alt="BannerImage" className="absolute h-screen lg:h-screen w-full object-cover object-right z-10" />
             <div className="absolute z-20 bg-gradient-to-r from-gray-900 via-gray-600 to-red-300 dark:from-gray-900 dark:via-lime-800 dark:to-gray-900 h-screen lg:h-screen w-full opacity-60" />
-            <div className="absolute z-20 h-screen lg:h-screen w-full pt-24 md:pt-32 lg:pt-32">
+            <div className="absolute z-20 h-screen lg:h-screen w-full pt-4 md:pt-32 lg:pt-4">
               <button
                 onClick={handleBackClick}
                 className="bg-transparent text-red-100 dark:border-lime-600 dark:hover:bg-lime-600 hover:text-white hover:bg-red-600 dark:hover:text-blue-100 dark:text-lime-300 py-2 px-4 rounded-full 
