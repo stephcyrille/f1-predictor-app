@@ -62,6 +62,13 @@ export const PredictorSecondPage = () => {
       try {
         const result = await getAlCircuitList();
         if (Array.isArray(result) && result.length > 0) {
+          // Fonction de comparaison pour trier par round (ordre ascendant)
+          const sortByRound = (a, b) => {
+            return parseInt(a.round) - parseInt(b.round);
+          };
+
+          // Trier la liste de circuits
+          result.sort(sortByRound);
           setCircuitList(result);
         } else {
           console.error("Received an empty or invalid array.");
