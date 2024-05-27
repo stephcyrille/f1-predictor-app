@@ -12,6 +12,8 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        'look': 'Look',
+        'my.portfolio': 'My Portfolio',
         "driver.selection": "Select the driver",
         'select.driver': "Select this driver",
         'prediction.error.line.1': "Error: Missings values !",
@@ -30,6 +32,8 @@ i18n.use(initReactI18next).init({
     },
     fr: {
       translation: {
+        'look': 'Visiter',
+        'my.portfolio': 'Mon Portfolio',
         "driver.selection": "Sélectionnez le pilote",
         'select.driver': 'Sélectionner ce pilote',
         'prediction.error.line.1': "Erreur: Valeurs manquantes !",

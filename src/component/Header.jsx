@@ -57,10 +57,10 @@ export const Header = () => {
         </div>
         <a href="https://stephanemebenga.site/" 
           className="dark:text-lime-100 dark:active:text-gray-700 dark:bg-black dark:hover:text-white -mx-3 
-                      rounded-lg px-2 py-2 lg:px-4 lg:py-2 text-xs lg:text-base font-semibold leading-7 text-gray-800 
+                      rounded-lg px-2 py-2 lg:px-4 lg:py-2 text-xs lg:text-sm font-semibold leading-7 text-gray-800 
                       hover:bg-gray-50 hover:text-lime-600 bg-lime-100"
         >
-          <span className='hidden lg:inline-block mr-1'>{t('Check')}</span>{t('My Portfolio')}
+          <span className='hidden lg:inline-block mr-1'>{t('look')}</span>{t('my.portfolio')}
         </a>
         <div className="flex lg:hidden">
           <Popover className="relative">
