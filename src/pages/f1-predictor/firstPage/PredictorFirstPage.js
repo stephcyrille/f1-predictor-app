@@ -96,13 +96,36 @@ export const PredictorFirstPage = () => {
             <ItemNameDisplay data={driversList} item_index={selectedDriverIndex} />
           </div>
           <DriverBigCard drivers={driversList} driver_index={selectedDriverIndex} />
-          <DriverCharactersList
-            ref={containerRef}
-            drivers={driversList}
-            driver_index={selectedDriverIndex}
-            handleImageHover={handleImageHover}
-            handleImageClick={handleImageClick}
-          />
+          {/* Hide the driver list that had hover effect action when we have a mobile device */}
+          <div className="hidden md:block lg:block">
+            <DriverCharactersList
+              ref={containerRef}
+              drivers={driversList}
+              driver_index={selectedDriverIndex}
+              handleImageHover={handleImageHover}
+              handleImageClick={handleImageClick}
+            />
+          </div>
+          
+          <div className="block md:hidden lg:hidden">
+            <div className='flex items-center justify-center mb-4'>
+              <button 
+                className='bg-red-600 dark:bg-gray-900 text-white dark:text-lime-300 p-2 
+                            rounded-lg border-solid border-2 border-gray-300
+                            dark:border-lime-300'
+                onClick={handleImageClick}
+                >
+                Select this driver &gt;
+              </button>
+            </div>
+            <DriverCharactersList
+              ref={containerRef}
+              drivers={driversList}
+              driver_index={selectedDriverIndex}
+              handleImageHover={(handleImageHover)}
+              handleImageClick={() => {}}
+            />
+          </div>
         </div>
       </div>
     </motion.div>
