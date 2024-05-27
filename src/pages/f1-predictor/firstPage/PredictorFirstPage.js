@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 import { DriverBigCard } from '../components/DriverBigCard';
@@ -19,6 +20,7 @@ const routeVariants = {
 };
 
 export const PredictorFirstPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const containerRef = useRef(null);
   const [selectedDriverIndex, setSelectedDriverIndex] = useState(0);
@@ -86,12 +88,16 @@ export const PredictorFirstPage = () => {
           { errorMissingVal && (
             <p className='bg-red-700 text-center -mt-10 mb-10 p-2 text-white'>
               <FontAwesomeIcon className='mr-2' icon={faExclamationTriangle} style={{ color: 'white', fontSize: '1em' }} />
-              Error: Missings values ! <br/> 
-              If the problem persist <a title='Send an email' className='pointer w-4 text-gray-900 italic ml-2 bg-white p-1' href='mailto:contact@stephanemebenga.site'>contact the administrator</a></p>
+              {t('prediction.error.line.1')} <br/> 
+              {t('prediction.error.line.2')} 
+              <a title='Send an email' 
+                className='pointer w-4 text-gray-900 italic ml-2 bg-white p-1' 
+                href='mailto:contact@stephanemebenga.site'>
+              {t('prediction.error.line.3')}</a></p>
           )}
           <div className='text-amber-400 dark:text-lime-400 pb-0'>
             <h1 className='text-center lg:text-xl md:text-xl text-white'>
-              Select the driver
+              {t('driver.selection')}
             </h1>
             <ItemNameDisplay data={driversList} item_index={selectedDriverIndex} />
           </div>
@@ -115,7 +121,7 @@ export const PredictorFirstPage = () => {
                             dark:border-lime-300'
                 onClick={handleImageClick}
                 >
-                Select this driver &gt;
+                  {t('select.driver')} &gt;
               </button>
             </div>
             <DriverCharactersList

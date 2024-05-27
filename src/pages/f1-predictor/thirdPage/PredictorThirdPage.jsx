@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams, createSearchParams } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { Loader } from '../../../component/loader/Loader';
@@ -22,6 +23,7 @@ const routeVariants = {
 }
 
 export const PredictorThirdPage = () => {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [searchParams,] = useSearchParams();
@@ -99,7 +101,7 @@ export const PredictorThirdPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                 </svg>
 
-                Restart
+                {t('restart')}
               </button>
 
               <div className='flex flex-col items-center'>
@@ -111,10 +113,10 @@ export const PredictorThirdPage = () => {
                 <div className='text-5xl md:text-9xl lg:text-9xl mb-10 lg:mb-0 text-red-500 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] font-face-gm dark:text-lime-400'>P{result.predicted_rank}</div>
 
                 <div className='p-8 rounded-3xl text-gray-100 font-face-gm text-center bg-red-600 bg-opacity-5 dark:text-00 dark:bg-lime-500 dark:bg-opacity-5'>
-                  <h1 className='text-xl md:text-4xl lg:text-4xl mb-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>Position predicted: <span className='font-bold'>{result.predicted_rank}</span></h1>
-                  <h1 className='text-sm md:text-3xl lg:text-3xl mb-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>Circuit name: <span className=''>{result.circuit_name}</span></h1>
+                  <h1 className='text-xl md:text-4xl lg:text-4xl mb-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>{t('prediction.position')}: <span className='font-bold'>{result.predicted_rank}</span></h1>
+                  <h1 className='text-sm md:text-3xl lg:text-3xl mb-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>{t('prediction.track.name')}: <span className=''>{result.circuit_name}</span></h1>
 
-                  <p className='text-xs md:text-sm lg:text-sm italic drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'><span className='underline'>Important: </span>The winning probability is around 30% with margin estimated to +/- 6 rank positions</p>
+                  <p className='text-xs md:text-sm lg:text-sm italic drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'><span className='underline'>{t('prediction.important')}: </span>{t('prediction.about.prediction')}</p>
                 </div>
               </div>
             </div>

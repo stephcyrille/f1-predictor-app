@@ -1,4 +1,5 @@
 import React, {useRef, useState, useEffect} from "react";
+import { useTranslation } from 'react-i18next';
 import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from "framer-motion";
 
@@ -24,6 +25,7 @@ const routeVariants = {
 }
 
 export const PredictorSecondPage = () => {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const navigate = useNavigate();
   const [searchParams,] = useSearchParams();
@@ -121,8 +123,7 @@ export const PredictorSecondPage = () => {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline mr-2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
             </svg>
-
-            Select the driver
+            {t('driver.selection')}
           </button>
 
           <div className='text-amber-100 dark:text-lime-400 pb-2 md:pb-6 lg:pb-6 mb-10'>
@@ -133,9 +134,9 @@ export const PredictorSecondPage = () => {
               <img className="absolute w-96 z-10 opacity-15" alt='Flag' src={circuitList.length > 0 ? circuitList[selectedCircuitIndex].country_img : ''} />
               <div className="p-6 flex flex-col z-50 text-amber-950 dark:text-amber-200 text-xl lg:text-2xl md:text-2xl justify-evenly">
                   {/* TODO Add the round number and the date of the race */}
-                  <h3><span className='underline font-bold text-sm'>Round {circuitList.length > 0 && circuitList[selectedCircuitIndex].id}:</span> <span className="text-sm lg:text-xl md:text-xl">{circuitList.length > 0 && circuitList[selectedCircuitIndex].name}</span></h3>
-                  <h3><span className='underline font-bold text-sm'>Location:</span> <span className="text-sm lg:text-xl md:text-xl">{circuitList.length > 0 &&  circuitList[selectedCircuitIndex].location}, {circuitList.length > 0 && circuitList[selectedCircuitIndex].country}</span></h3>
-                  <h3><span className='underline font-bold text-sm'>Date</span>: <span className="text-sm lg:text-xl md:text-xl">{circuitList.length > 0 &&circuitList[selectedCircuitIndex].date}</span></h3>
+                  <h3><span className='underline font-bold text-sm'>{t('round.no')} {circuitList.length > 0 && circuitList[selectedCircuitIndex].id}:</span> <span className="text-sm lg:text-xl md:text-xl">{circuitList.length > 0 && circuitList[selectedCircuitIndex].name}</span></h3>
+                  <h3><span className='underline font-bold text-sm'>{t('round.location')}:</span> <span className="text-sm lg:text-xl md:text-xl">{circuitList.length > 0 &&  circuitList[selectedCircuitIndex].location}, {circuitList.length > 0 && circuitList[selectedCircuitIndex].country}</span></h3>
+                  <h3><span className='underline font-bold text-sm'>{t('round.date')}</span>: <span className="text-sm lg:text-xl md:text-xl">{circuitList.length > 0 &&circuitList[selectedCircuitIndex].date}</span></h3>
               </div>
               <div className="p-2 lg:p-6 md:flex lg:flex md:justify-center lg:justify-center">
                 <img className='h-48 md:h-80 lg:h-80 self-center' src={circuitList.length > 0 ? circuitList[selectedCircuitIndex].circuit_img : ''} alt="Stephane Cyrille" />
@@ -160,7 +161,7 @@ export const PredictorSecondPage = () => {
                             dark:border-lime-300'
                 onClick={handleImageClick}
                 >
-                Select this track &gt;
+                {t('select.track')} &gt;
               </button>
             </div>
             <ItemSelectorHScroll 
