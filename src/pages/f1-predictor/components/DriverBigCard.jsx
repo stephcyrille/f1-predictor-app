@@ -3,7 +3,7 @@ import React from "react";
 export const DriverBigCard = ({drivers, driver_index}) => {
 
   return (
-    <div className="h-72 mt-4 md:h-96 md:mt-20 lg:h-96 flex lg:mt-20">
+    <div className="h-72 mt-4 md:h-96 md:mt-20 lg:h-96 flex lg:mt-20 pt-4 lg:pt-0">
       {drivers.map((driver, index) => (
         <img
           key={index}

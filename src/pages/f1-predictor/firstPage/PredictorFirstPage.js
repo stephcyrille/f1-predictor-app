@@ -84,7 +84,7 @@ export const PredictorFirstPage = () => {
           className="absolute h-screen lg:h-screen w-full object-cover object-right z-10"
         />
         <div className="absolute z-20 bg-gradient-to-r from-gray-900 via-gray-600 to-red-300 dark:from-gray-900 dark:via-lime-800 dark:to-gray-900 h-screen lg:h-screen w-full opacity-60" />
-        <div className="absolute z-20 h-screen lg:h-screen w-full pt-32">
+        <div className="absolute z-20 h-screen lg:h-screen w-full pt-12">
           { errorMissingVal && (
             <p className='bg-red-700 text-center -mt-10 mb-10 p-2 text-white'>
               <FontAwesomeIcon className='mr-2' icon={faExclamationTriangle} style={{ color: 'white', fontSize: '1em' }} />
